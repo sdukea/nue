@@ -2,26 +2,21 @@
 
 # Nue
 
-*It's revolutionary*
-
-**Speak Tamil. Be heard in English.**
-**And the other way around.**
-
-Real-time voice translation, built into the call.
+Real-time voice translation for calls, in any language.
 
 </div>
 
 ---
 
-## One call. Two languages. No barrier.
+## What it does
 
-Meena speaks Tamil. John speaks English.
-They've never understood each other. Until now.
+Two people on a call. Each speaks their own language.
 
-Meena talks. John hears English.
-John replies. Meena hears Tamil.
+You talk in yours. They hear you in theirs.
+They reply in theirs. You hear them in yours.
 
-That's it. That's Nue.
+Tamil and English. Japanese and Spanish. Hindi and French.
+Any two languages, on one call.
 
 ---
 
@@ -43,10 +38,10 @@ A call is two streams of sound, one each way.
 Nue puts a translator in each stream.
 
 ```
-Meena  ──►  Listen  ─►  Understand  ─►  Translate  ─►  Speak  ──►  John
- Tamil                                                            English
+You   ──►  Listen  ─►  Understand  ─►  Translate  ─►  Speak  ──►  Them
+yours                                                            theirs
 
-Meena  ◄──  Speak  ◄─  Translate  ◄─  Understand  ◄─  Listen  ◄──  John
+You   ◄──  Speak  ◄─  Translate  ◄─  Understand  ◄─  Listen  ◄──  Them
 ```
 
 |  |  |
@@ -56,14 +51,16 @@ Meena  ◄──  Speak  ◄─  Translate  ◄─  Understand  ◄─  Listen  
 | **Translate** | Carries your meaning into the other language. |
 | **Speak** | Says it out loud, only to the person who needs to hear it. |
 
+Each person picks their language when they join. Nue always knows who speaks what.
+
 ### Why the pause matters
 
-In Tamil, the verb comes last.
+Languages don't share the same word order. Tamil, Hindi, Japanese, Korean and Turkish put the verb last.
 
-> நான் நாளைக்கு கடைக்கு **போவேன்**
+> நான் நாளைக்கு கடைக்கு **போவேன்** · *Tamil*
 > *I · tomorrow · to the shop · **will go***
 
-Nue has to hear the whole thought before it can say it in English. So it waits for your pause, then speaks. That's how the languages work, not a limitation of the software.
+English needs "will go" near the start, so Nue has to hear the whole thought first. It waits for your pause, then speaks. That's how the languages work, not a limitation of the software.
 
 ---
 
@@ -72,7 +69,7 @@ Nue has to hear the whole thought before it can say it in English. So it waits f
 - **You never hear yourself translated.** Only the other person does.
 - **You always see what Nue heard.** If it's wrong, just say it again.
 - **The live speaker always wins.** Start talking and Nue stops to listen.
-- **Tanglish just works.** "Meeting-க்கு late-ஆ வருவேன்" is how people really talk.
+- **Mixed languages just work.** Tanglish, Hinglish, Spanglish: how people really talk.
 
 ---
 
@@ -82,10 +79,12 @@ Nue has to hear the whole thought before it can say it in English. So it waits f
 |---|---|
 | **Calls** | WebRTC via [LiveKit](https://livekit.io) |
 | **Translator** | A Python agent that joins the call as an invisible participant |
-| **Speech → Text** | Tamil and English speech recognition |
+| **Speech → Text** | Speech recognition for each caller's language |
 | **Translation** | Context-aware, so names and meaning carry through |
-| **Text → Speech** | Natural Tamil and English voices |
+| **Text → Speech** | Natural voices in each caller's language |
 | **App** | Web first, then mobile |
+
+Each step can use a different provider for each language. Nue picks whichever handles that language best.
 
 ```
 nue/
@@ -99,9 +98,10 @@ nue/
 
 ## Roadmap
 
-- [ ] **Prove it.** Tamil → English on recorded audio. Measure accuracy and speed.
-- [ ] **Both ways.** English → Tamil, on a live call between two people.
+- [ ] **Prove it.** One language pair on recorded audio, starting with Tamil → English. Measure accuracy and speed.
+- [ ] **Both ways.** Live two-way translation on a call between two people.
 - [ ] **See it.** Live subtitles, with the original voice softly underneath.
+- [ ] **Every language.** Add languages one by one, each tested for accuracy and speed.
 - [ ] **Any phone.** Call a Nue number from any phone, no app needed.
 - [ ] **In your pocket.** iOS and Android.
 
@@ -110,7 +110,5 @@ nue/
 <div align="center">
 
 **Nue** · In development
-
-*Language shouldn't decide who you can talk to.*
 
 </div>
